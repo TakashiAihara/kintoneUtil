@@ -1,34 +1,23 @@
 module.exports = {
   env: {
     browser: true,
-    commonjs: true,
-    es6: true,
-    jquery: true,
+    // commonjs: true,
+    // es6: true,
+    jquery: true
   },
   extends: [
-    // 'standard',
-    '@cybozu/eslint-config',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
+    'standard'
+    // '@cybozu/eslint-config',
+    // 'plugin:@typescript-eslint/recommended',
+    // 'plugin:prettier/recommended',
+    // 'prettier/@typescript-eslint',
   ],
   plugins: ['@typescript-eslint', 'jquery'],
   parser: '@typescript-eslint/parser',
   globals: {
-    kintone: false,
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-    window: true,
-    kintoneUIComponent: 'readonly',
-    UltraDate: 'readonly',
-    moment: 'readonly',
-    calendarplus: 'readonly',
-    Swal: 'readonly',
-    cybozu: 'readonly',
   },
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    ecmaVersion: 6
   },
   rules: {
     semi: ['error', 'always'],
@@ -36,27 +25,17 @@ module.exports = {
       'error',
       {
         after: true,
-        before: false,
-      },
+        before: false
+      }
     ],
-    'no-var': 0,
-    'vars-on-top': ['off'],
     'semi-style': ['error', 'last'],
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: true,
-        printWidth: 120,
-        endOfLine: 'auto',
-      },
-    ],
+    // 'prettier/prettier': ['error', { singleQuote: true, semi: true }],
     'no-extra-semi': 'error',
     quotes: ['warn', 'single', { allowTemplateLiterals: true }],
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
     'space-before-function-paren': 0,
     'eol-last': 0,
-    indent: ['error', 2],
-  },
+    indent: ['error', 2, { SwitchCase: 1 }]
+  }
 };
