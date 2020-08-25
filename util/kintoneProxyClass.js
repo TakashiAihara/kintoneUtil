@@ -44,8 +44,8 @@
 // '/k/v1/template/space'
 // ];
 
-window.kintoneProxy = {
-  get: async function ({ api, update = false, opt }) {
+window.KintoneProxyClass = {
+  get: async function ({ api, update = false, opt } = {}) {
     if (update || !(api in this)) {
       this[api] = await kintone.api(kintone.api.url(api, true), 'GET', opt);
     }
