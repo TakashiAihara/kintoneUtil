@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "declarationDir": "dist/types",
+    "declaration": true,
+    "target": "esnext",
+    "module": "umd",
+    "strict": true
+  },
+  "files" : [
+    "./node_modules/@kintone/dts-gen/kintone.d.ts",
+    "./node_modules/moment/moment.d.ts",
+    "./node_modules/@kintone/kintone-ui-component/esm/js/index.d.ts",
+    "./src/fields.d.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "dest",
+    "node_modules"
+  ]
+}
