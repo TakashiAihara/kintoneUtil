@@ -1,4 +1,12 @@
-// 詳細画面か新規画面で実行。
+/*
+execute at Record Detail.
+example:
+  No,ID,Label,Code,type
+  1,5500000,レコード番号,レコード番号,RECORD_ID
+  2,5500001,更新者,更新者,MODIFIER
+  3,5500002,作成者,作成者,CREATOR
+  ...
+*/
 
 var list = [];
 Object.keys(cybozu.data.page.FORM_DATA.schema.table.fieldList).map(e =>
@@ -34,6 +42,6 @@ ${cybozu.data.page.FORM_DATA.schema.subTable[e].fieldList[f].type}\
 `)));
 
 copy(
-  'No,ID,ラベル,コード,型' + '\n' +
+  'No,ID,Label,Code,type' + '\n' +
     list.map((e, i) => { return `${i + 1},${e}`; }).join('\n')
 );
